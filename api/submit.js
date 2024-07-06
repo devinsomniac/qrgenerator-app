@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
         try {
             const url = await QRCode.toDataURL(userInput, options);
-            res.status(200).send(`<img src="${url}" alt="QR Code">`);
+            res.status(200).send(`<img src="${url}" alt="QR Code" style="border-radius: 20px;">`);
         } catch (err) {
             console.error(err);
             res.status(500).send('Error generating QR code');
