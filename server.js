@@ -21,7 +21,7 @@ app.post("/submit", async (req,res) => {
     const userInput = req.body["basic-url"]
     const option = {width : 300}
     const url = await QRCode.toDataURL(userInput,option)
-    res.send(`<img src="${url}" alt="QR Code">`)
+    res.send(`<img src="${url}" alt="QR Code" style="border-radius: 20px;">`)
 })
 
 

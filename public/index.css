@@ -48,6 +48,7 @@ body{
 #btn-prop{
     width: 50%;
     border-radius: 40px;
+    font-weight: bolder;
 }
 
 .generated-qr{
