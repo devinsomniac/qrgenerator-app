@@ -12,29 +12,8 @@ Technologies Used
     Backend: Node.js, Express, qrcode npm package
     Frontend: HTML, CSS (Bootstrap), JavaScript
 
-The Project Structure
 
-qr-code-generator/
-│
-├── api/
-│   └── submit.js
-│
-├── public/
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   └── script.js
-│   └── index.html
-│
-├── node_modules/
-│
-├── vercel.json
-│
-├── package.json
-│
-└── README.md
-
-Contributing
+Contributing - 
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 Contact
