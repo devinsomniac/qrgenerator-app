@@ -12,9 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
             searchParams.append(pair[0],pair[1])
         }
 
-        fetch("/submit",{
-            method : 'POST',
-            body : searchParams
+        fetch("/api/submit", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: searchParams
         })
         .then(response => response.text())
         .then(data => {
