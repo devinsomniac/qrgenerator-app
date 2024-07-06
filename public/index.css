@@ -54,7 +54,7 @@ body{
 .generated-qr{
     height: 60%;
     width: 100%;
-    border: 1px solid black;
+    border: 10px solid rgb(226, 194, 14);
     display: flex;
     justify-content: center;
     align-items: center;
