@@ -7,13 +7,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 
-app.use(express.static('public'));
+// Parse form data
 app.use(express.urlencoded({ extended: true }));
 
+// Handle GET request for the root path (/)
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));  // Assuming index.html is in the same directory
 });
 
+// Handle POST request to the "/submit" endpoint
 app.post('/submit', async (req, res) => {
   const userInput = req.body['basic-url'];
   const options = { width: 300 };
