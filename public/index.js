@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const formdata = new FormData(form)
         const searchParams = new URLSearchParams()
 
-        for(pair of formdata){
-            searchParams.append(pair[0],pair[1])
+        for (pair of formdata) {
+            searchParams.append(pair[0], pair[1])
         }
 
         fetch("/api/submit", {
@@ -22,19 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             qrValueHolder.innerHTML = data
+
+            // Delay the download by 3 seconds (3000 milliseconds)
+            setTimeout(() => {
+                const qrCodeImg = qrValueHolder.querySelector("img")
+                if (qrCodeImg) {
+                    const link = document.createElement("a")
+                    link.href = qrCodeImg.src
+                    link.download = "qr-image.png"
+                    document.body.appendChild(link)
+
+                    link.click()
+
+                    document.body.removeChild(link)
+                }
+            }, 3000) // Change the delay time here as needed
         })
-
-        const qrCodeImg = qrValueHolder.querySelector("img")
-        if(qrCodeImg){
-            const link = document.createElement("a")
-            link.href = qrCodeImg.src
-            link.download = "qr-image.png"
-            document.body.appendChild(link)
-
-            link.click()
-
-            document.body.removeChild(link)
-        }
-
     })
 })
