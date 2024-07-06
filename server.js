@@ -1,30 +1,30 @@
-import bodyParser from "body-parser"
-import express from "express"
-import {dirname} from "path"
-import { fileURLToPath } from "url"
-import QRCode from "qrcode"
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import express from 'express';
+import QRCode from 'qrcode';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const port = process.env.PORT || 3000
-const app = express()
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const app = express();
 
-app.use(express.static("public"))
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/" , (req,res) => {
-    res.sendFile(__dirname + "/public/index.html")
-})
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
+app.post('/submit', async (req, res) => {
+  const userInput = req.body['basic-url'];
+  const options = { width: 300 };
 
-app.post("/submit", async (req,res) => {
-    const userInput = req.body["basic-url"]
-    const option = {width : 300}
-    const url = await QRCode.toDataURL(userInput,option)
-    res.send(`<img src="${url}" alt="QR Code" style="border-radius: 20px;">`) 
-})
+  try {
+    const url = await QRCode.toDataURL(userInput, options);
+    res.send(`<img src="${url}" alt="QR Code">`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error generating QR code');
+  }
+});
 
-
-app.listen(port, () => {
-    console.log(`The app is listening to ${port}`)
-})
+export default app;
