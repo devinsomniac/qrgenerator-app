@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
-import { Button } from './ui/button'
+import React, { ChangeEvent, useState } from 'react'
+import { Button } from '@/components/ui/button'
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 const services = [
@@ -17,6 +17,12 @@ const services = [
 
 const Selection = () => {
     const [selectedService, setSelectedService] = useState("URL")
+    const [formData,setFormData] = useState({})
+    const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+        setFormData((...formData) => ({...formData,
+            [e.target.name] : e.target.value
+    }))
+    }
     const renderForm = () => {
         switch (selectedService) {
             case "URL":
