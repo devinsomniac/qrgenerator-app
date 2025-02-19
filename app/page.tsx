@@ -1,15 +1,18 @@
+"use client"
 import Navbar from "@/components/Navbar";
 import QrGenerated from "@/components/QrGenerated";
 import Selection from "@/components/Selection";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
   return (
     <div>
       <Navbar />
       <div className="bg-slate-100 p-8 grid md:grid-cols-2">
-        <Selection />
-        <QrGenerated />
+      <Selection setQrCodeUrl={setQrCodeUrl} />
+      <QrGenerated qrCodeUrl={qrCodeUrl} />
       </div>
       <div className="bg-white rounded-lg shadow-md p-8 ">
         <h1 className="text-2xl font-bold text-gray-800">What is a QR Code?</h1>

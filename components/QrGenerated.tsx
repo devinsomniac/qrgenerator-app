@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
-
-const QrGenerated = () => {
+interface QRGeneratedProps {
+  qrCodeUrl: string;
+}
+const QrGenerated : React.FC<QRGeneratedProps> = ({ qrCodeUrl }) => {
   return (
-    <div className='flex justify-center items-center'>
-        <Image src={'/exampleqr.jpg'} alt='example' height={50} width={200}/>
-    </div>
+    <div className='bg-white p-8 rounded-lg flex justify-center items-center'>
+    {qrCodeUrl ? <img src={qrCodeUrl} alt="QR Code" height={200} width={200}/> : <p>No QR code generated yet.</p>}
+  </div>
   )
 }
 
