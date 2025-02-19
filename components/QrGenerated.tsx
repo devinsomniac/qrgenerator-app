@@ -6,7 +6,7 @@ interface QRGeneratedProps {
 const QrGenerated : React.FC<QRGeneratedProps> = ({ qrCodeUrl }) => {
   return (
     <div className='bg-white p-8 rounded-lg flex justify-center items-center'>
-    {qrCodeUrl ? <img src={qrCodeUrl} alt="QR Code" height={200} width={200}/> : <p>No QR code generated yet.</p>}
+    {qrCodeUrl ? <Image src={qrCodeUrl} alt="QR Code" height={200} width={200}/> : <p>No QR code generated yet.</p>}
   </div>
   )
 }
