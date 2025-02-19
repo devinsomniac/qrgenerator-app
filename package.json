@@ -1,5 +1,4 @@
-
-  {
+{
   "name": "qrgenerator-app",
   "version": "0.1.0",
   "private": true,
@@ -24,7 +23,9 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/estree": "^1.0.6",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "^20.17.19",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -35,4 +36,3 @@
     "typescript": "^5"
   }
 }
-
