@@ -47,66 +47,66 @@ interface SelectionProps {
         switch (selectedService) {
             case "URL":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter the URL to create QR</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter the URL to create QR</label>
                         <Input className='bg-white' name='url_input' onChange={handleChange} />
                     </div>
                 )
                 break;
             case "VCard":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter the Name</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter the Name</label>
                         <Input name='vcard_name' className='bg-white' onChange={handleChange} />
-                        <label>Enter the Phone Number</label>
+                        <label className='text-white'>Enter the Phone Number</label>
                         <Input name='vcard_number' className='bg-white' onChange={handleChange} />
-                        <label>Enter the Email Id</label>
+                        <label className='text-white'>Enter the Email Id</label>
                         <Input name='vcard_email' className='bg-white' onChange={handleChange} />
-                        <label>Enter the Address</label>
+                        <label className='text-white'>Enter the Address</label>
                         <Input name='vcard_address' className='bg-white' onChange={handleChange} />
                     </div>
                 )
                 break;
             case "Text":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter Your Text</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter Your Text</label>
                         <Textarea name='text_input' className='bg-white' onChange={handleChange} />
                     </div>
                 )
                 break;
             case "Email":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter the Email</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter the Email</label>
                         <Input name='email_input' className='bg-white' onChange={handleChange} />
                     </div>
                 )
                 break;
             case "Twitter":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter the URL to create QR</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter the URL to create QR</label>
                         <Input name='twitter_handle' className='bg-white' onChange={handleChange} />
                     </div>
                 )
                 break;
             case "Facebook":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter the URL to create QR</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter the URL to create QR</label>
                         <Input name='facebook_handle' className='bg-white' onChange={handleChange} />
                     </div>
                 )
                 break;
             case "Wifi":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Enter WiFi Name (SSID):</label>
+                    <div className='font-semibold'>
+                        <label className='text-white'>Enter WiFi Name (SSID):</label>
                         <Input placeholder="Network Name" name='ssid_name' className='bg-white' onChange={handleChange} />
-                        <label>Enter Password:</label>
+                        <label className='text-white'>Enter Password:</label>
                         <Input type="password" placeholder="Password" name='ssid_password' className='bg-white' onChange={handleChange} />
-                        <label>Encryption Type:</label>
+                        <label className='text-white'>Encryption Type:</label>
                         <select className="border p-2 rounded w-full" name='encryption_type' onChange={handleChange}>
                             <option>WPA/WPA2</option>
                             <option>WEP</option>
@@ -117,8 +117,8 @@ interface SelectionProps {
                 break;
             case "PDF":
                 return (
-                    <div className='text-white font-semibold'>
-                        <label>Upload PDF:</label>
+                    <div className=' font-semibold'>
+                        <label className='text-white'>Upload PDF:</label>
                         <Input type="file" name='pdf_file' className='bg-white' onChange={handleChange} />
                     </div>
                 )
