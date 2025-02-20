@@ -15,7 +15,7 @@ const Navbar = async () => {
                     <p className="font-semibold">Generate. Scan. Connect.</p>
                 </div>
             </div>
-            {session && session.user.image ? ( 
+            {session && session?.user?.image ? ( 
                 <Image src={session.user.image} alt="profile" height={50} width={50} className="rounded-full border-gray-500 border-2"/>
             ) 
             :
