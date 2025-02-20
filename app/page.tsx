@@ -1,5 +1,4 @@
 "use client"
-import Navbar from "@/components/Navbar";
 import QrGenerated from "@/components/QrGenerated";
 import Selection from "@/components/Selection";
 import Image from "next/image";
@@ -9,7 +8,6 @@ export default function Home() {
   const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
   return (
     <div>
-      <Navbar />
       <div className="bg-slate-100 p-8 grid md:grid-cols-2">
       <Selection setQrCodeUrl={setQrCodeUrl} />
       <QrGenerated qrCodeUrl={qrCodeUrl} />
