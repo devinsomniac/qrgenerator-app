@@ -11,6 +11,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link";
+import { FcGoogle } from "react-icons/fc";
 
 const Navbar = async () => {
     const session = await auth();
@@ -57,7 +58,8 @@ const Navbar = async () => {
                         await signIn("google");
                     }}
                 >
-                    <Button type="submit">Signin with Google</Button>
+                    <Button type="submit"><FcGoogle />
+                    Sign In</Button>
                 </form>
             }
         </div>

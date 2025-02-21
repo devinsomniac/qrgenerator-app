@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ background: "linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)" }}>
         <Navbar/>
         {children}
         <Signature/>
