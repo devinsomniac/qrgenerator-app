@@ -156,6 +156,15 @@ interface SelectionProps {
         try {
             const qrCodeUrl = await QRCode.toDataURL(qrData);
             setQrCodeUrl(qrCodeUrl)
+            const response = await fetch('api/saveQr',{
+                method:'POST',
+                body:JSON.stringify({qrCodeUrl}),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })
+            const data = await response.json()
+            console.log(data)
             console.log("Generated QR Code URL:", qrCodeUrl);
         } catch (error) {
             console.error("Error generating QR Code:", error);
