@@ -158,7 +158,11 @@ interface SelectionProps {
             setQrCodeUrl(qrCodeUrl)
             const response = await fetch('api/saveQr',{
                 method:'POST',
-                body:JSON.stringify({qrCodeUrl}),
+                body:JSON.stringify({
+                    qrCodeUrl:qrCodeUrl,
+                    type:selectedService,
+                    content : qrData,
+                }),
                 headers:{
                     'Content-Type':'application/json'
                 }
